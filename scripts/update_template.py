@@ -16,8 +16,8 @@ if __name__ == "__main__":
         exit(1)
 
     # Atualiza o template
-    try:
-        updated_file = update_template(data_path, template_path, output_path)
-        print(f"Template atualizado com sucesso! Arquivo salvo em: {updated_file}")
-    except Exception as e:
-        print(f"Erro ao atualizar template: {e}")
+    updated_file = update_template(data_path, template_path, output_path)
+    # try:
+    #     print(f"Template atualizado com sucesso! Arquivo salvo em: {updated_file}")
+    # except Exception as e:
+    #     print(f"Erro ao atualizar template: {e}")

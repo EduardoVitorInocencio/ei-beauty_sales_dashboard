@@ -10,15 +10,44 @@ class ProductSalesGraph(BaseGraph):
 
     CHART_NAME = "Chart_Produto"  # Nome do gráfico no template
 
+    # Filtros fixos
+    FILTERS = {
+        "formats": "T. Embalagens",
+        "region": "Total Brasil",
+        "channels": "Hipermercados",
+        "periods": "YTD Dec-20",
+        "brands": "Coca-Cola Cia"
+    }
+
+    # Colunas que queremos no DataFrame final
+    SELECT_COLS = [
+        "units","value_(r$)","weighted_hholds","weighted_buyers","penetration_(%)",
+        "units_per_buyer","spend_per_buyer_(r$)","units_per_trip","spend_per_trip",
+        "frequency","avg_price_per_unit"
+    ]
+
+    COLS_RENAME = {
+        "units": "Units",
+        "value_(r$)": "Value_(R$)",
+        "weighted_hholds": "Weighted_HHOLDS",
+        "weighted_buyers": "Weighted_Buyers",
+        "penetration_(%)": "Penetration_(%)",
+        "units_per_buyer": "Units_per_Buyer",
+        "spend_per_buyer_(r$)": "Spend_per_Buyer_(R$)",
+        "units_per_trip": "Units_per_Trip",
+        "spend_per_trip": "Spend_per_Trip",
+        "frequency": "Frequency",
+        "avg_price_per_unit": "Avg_Price_per_Unit"
+    }
+
     def filter_data(self):
         """
-        Agrupa os dados por produto e soma as vendas.
+        Aplicar os filtros e selecionar/renomear as colunas desejadas.
         """
-        self.filtered_data = (
-            self.data.groupby("produto")["vendas"]
-            .sum()
-            .reset_index()
-        )
+        df = self.data.copy()
+
+        for col, val in self.FILTERS.items():
+            df = df[df[col] == val]
 
     def update_chart(self):
         """

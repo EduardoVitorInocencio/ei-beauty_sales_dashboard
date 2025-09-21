@@ -1,5 +1,15 @@
-/venv
-/.pytest_cache
+# Virtual environment
+/venv/
+
+# Cache do pytest
+/.pytest_cache/
+
+# Cache do Python
 __pycache__/
 
+# Pastas de banco de dados e dados
+*/database/
+*/dados/
+
+# Arquivo de ambiente
 .env

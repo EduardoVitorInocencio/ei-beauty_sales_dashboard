@@ -17,15 +17,18 @@ def load_data(file_path: str) -> pd.DataFrame:
         df.columns = [col.strip().lower().replace(" ", "_") for col in df.columns]
 
         # Exemplo: garantir que colunas essenciais existam
-        expected_cols = {"produto", "regiao", "data", "vendas"}
+        expected_cols = {
+                        "formats","region","channels","periods","brands","units","value_(r$)",
+                        "weighted_hholds","weighted_buyers","penetration_(%)","units_per_buyer",
+                        "spend_per_buyer_(r$)","units_per_trip","spend_per_trip","frequency",
+                        "avg_price_per_unit"
+                        }
         if not expected_cols.issubset(set(df.columns)):
             raise ValueError(
                 f"Colunas esperadas {expected_cols}, mas encontrado {set(df.columns)}"
             )
 
         # Converter colunas
-        df["data"] = pd.to_datetime(df["data"], errors="coerce")
-        df["vendas"] = pd.to_numeric(df["vendas"], errors="coerce").fillna(0)
 
         return df
 
