@@ -1,0 +1,44 @@
+{
+    "header": [
+        "shape_header_volume_units",
+        "shape_header_preco_medio",
+        "shape_headerr_compradores",
+        "shape_header_volume_por_comprador",
+        "shape_header_total_domicilios",
+        "shape_headerr_per_penetracao",
+        "shape_header_volume_por_viagem",
+        "shape_header_frequencia",
+        "shape_header_gasto_por_viagem",
+        "shape_header_frequencia2",
+        "shape_header_gasto_por_comprador",
+        "shape_header_valor"
+    ],
+    "abs": [
+        "shape_abs_volume_units",
+        "shape_abs_preco_medio",
+        "shape_abs_compradores",
+        "shape_abs_volume_por_comprador",
+        "shape_abs_total_domicilios",
+        "shape_absr_per_penetracao",
+        "shape_abs_volume_por_viagem",
+        "shape_abs_frequencia",
+        "shape_abs_gasto_por_viagem",
+        "shape_abs_frequencia2",
+        "shape_abs_gasto_por_comprador",
+        "shape_abs_valor"
+    ],
+    "var": [
+        "shape_var_volume_units",
+        "shape_var_preco_medio",
+        "shape_var_compradores",
+        "shape_var_volume_por_comprador",
+        "shape_var_total_domicilios",
+        "shape_var_per_penetracao",
+        "shape_var_volume_por_viagem",
+        "shape_var_frequencia",
+        "shape_var_gasto_por_viagem",
+        "shape_var_frequencia2",
+        "shape_var_gasto_por_comprador",
+        "shape_var_valor"
+    ]
+}

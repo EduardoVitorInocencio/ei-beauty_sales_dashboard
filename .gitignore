@@ -9,7 +9,7 @@ __pycache__/
 
 # Pastas de banco de dados e dados
 */database/
-*/dados/
+/dados/
 
 # Arquivo de ambiente
 .env

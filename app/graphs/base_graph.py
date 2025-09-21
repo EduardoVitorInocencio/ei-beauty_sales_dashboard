@@ -33,3 +33,11 @@ class BaseGraph(ABC):
         Cada gráfico deve sobrescrever este método.
         """
         pass
+
+    @abstractmethod
+    def update_value_shape(self):
+        """
+        Método para atualizar os dados das formas existentes no slide.
+        Cada forma deve sobrescrever este método.
+        """
+        pass
